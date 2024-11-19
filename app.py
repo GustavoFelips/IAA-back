@@ -1,8 +1,12 @@
 from flask import Flask, request, jsonify
 from gradio_client import Client, handle_file
+from flask_cors import CORS
 import os
 
 app = Flask(__name__)
+
+# Configurar CORS para todas as rotas
+CORS(app)
 
 @app.route("/teste")
 def index():
